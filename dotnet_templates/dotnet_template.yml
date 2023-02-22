@@ -1,0 +1,11 @@
+--- 
+parameters: 
+  - name: projects 
+    type: string 
+    default: '$(Build.Repository.LocalPath)/src/NopCommerce.sln' 
+steps: 
+  - task: DotNetCoreCLI@2 
+    inputs:
+      command: build
+      projects: "${{ parameters.projects }}"
+    
